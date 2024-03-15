@@ -1,0 +1,159 @@
+{
+  "format_version": "1.2",
+  "terraform_version": "1.7.4",
+  "planned_values": {
+    "root_module": {
+      "resources": [
+        {
+          "address": "time_offset.example",
+          "mode": "managed",
+          "type": "time_offset",
+          "name": "example",
+          "provider_name": "registry.terraform.io/hashicorp/time",
+          "schema_version": 0,
+          "values": {
+            "base_rfc3339": "2024-03-15T09:58:47Z",
+            "day": 23,
+            "hour": 9,
+            "id": "2024-03-15T09:58:47Z",
+            "minute": 58,
+            "month": 3,
+            "offset_days": 8,
+            "offset_hours": null,
+            "offset_minutes": null,
+            "offset_months": null,
+            "offset_seconds": null,
+            "offset_years": null,
+            "rfc3339": "2024-03-23T09:58:47Z",
+            "second": 47,
+            "triggers": null,
+            "unix": 1711187927,
+            "year": 2024
+          },
+          "sensitive_values": {}
+        }
+      ]
+    }
+  },
+  "resource_changes": [
+    {
+      "address": "time_offset.example",
+      "mode": "managed",
+      "type": "time_offset",
+      "name": "example",
+      "provider_name": "registry.terraform.io/hashicorp/time",
+      "change": {
+        "actions": [
+          "update"
+        ],
+        "before": {
+          "base_rfc3339": "2024-03-15T09:58:47Z",
+          "day": 22,
+          "hour": 9,
+          "id": "2024-03-15T09:58:47Z",
+          "minute": 58,
+          "month": 3,
+          "offset_days": 7,
+          "offset_hours": null,
+          "offset_minutes": null,
+          "offset_months": null,
+          "offset_seconds": null,
+          "offset_years": null,
+          "rfc3339": "2024-03-22T09:58:47Z",
+          "second": 47,
+          "triggers": null,
+          "unix": 1711101527,
+          "year": 2024
+        },
+        "after": {
+          "base_rfc3339": "2024-03-15T09:58:47Z",
+          "day": 23,
+          "hour": 9,
+          "id": "2024-03-15T09:58:47Z",
+          "minute": 58,
+          "month": 3,
+          "offset_days": 8,
+          "offset_hours": null,
+          "offset_minutes": null,
+          "offset_months": null,
+          "offset_seconds": null,
+          "offset_years": null,
+          "rfc3339": "2024-03-23T09:58:47Z",
+          "second": 47,
+          "triggers": null,
+          "unix": 1711187927,
+          "year": 2024
+        },
+        "after_unknown": {},
+        "before_sensitive": {},
+        "after_sensitive": {}
+      }
+    }
+  ],
+  "prior_state": {
+    "format_version": "1.0",
+    "terraform_version": "1.7.4",
+    "values": {
+      "root_module": {
+        "resources": [
+          {
+            "address": "time_offset.example",
+            "mode": "managed",
+            "type": "time_offset",
+            "name": "example",
+            "provider_name": "registry.terraform.io/hashicorp/time",
+            "schema_version": 0,
+            "values": {
+              "base_rfc3339": "2024-03-15T09:58:47Z",
+              "day": 22,
+              "hour": 9,
+              "id": "2024-03-15T09:58:47Z",
+              "minute": 58,
+              "month": 3,
+              "offset_days": 7,
+              "offset_hours": null,
+              "offset_minutes": null,
+              "offset_months": null,
+              "offset_seconds": null,
+              "offset_years": null,
+              "rfc3339": "2024-03-22T09:58:47Z",
+              "second": 47,
+              "triggers": null,
+              "unix": 1711101527,
+              "year": 2024
+            },
+            "sensitive_values": {}
+          }
+        ]
+      }
+    }
+  },
+  "configuration": {
+    "provider_config": {
+      "time": {
+        "name": "time",
+        "full_name": "registry.terraform.io/hashicorp/time",
+        "version_constraint": "0.11.1"
+      }
+    },
+    "root_module": {
+      "resources": [
+        {
+          "address": "time_offset.example",
+          "mode": "managed",
+          "type": "time_offset",
+          "name": "example",
+          "provider_config_key": "time",
+          "expressions": {
+            "offset_days": {
+              "constant_value": 8
+            }
+          },
+          "schema_version": 0
+        }
+      ]
+    }
+  },
+  "timestamp": "2024-03-15T09:58:47Z",
+  "errored": false
+}

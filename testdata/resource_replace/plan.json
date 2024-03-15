@@ -1,19 +1,7 @@
 {
   "format_version": "1.2",
   "terraform_version": "1.7.4",
-  "variables": {
-    "secret": {
-      "value": "very very secret 1"
-    }
-  },
   "planned_values": {
-    "outputs": {
-      "secret": {
-        "sensitive": true,
-        "type": "string",
-        "value": "very very secret 1"
-      }
-    },
     "root_module": {
       "resources": [
         {
@@ -25,13 +13,11 @@
           "schema_version": 0,
           "values": {
             "triggers": {
-              "secret": "very very secret 1"
+              "secret": "very very secure"
             }
           },
           "sensitive_values": {
-            "triggers": {
-              "secret": true
-            }
+            "triggers": {}
           }
         }
       ]
@@ -50,15 +36,14 @@
           "create"
         ],
         "before": {
-          "id": "3995433242841035086",
+          "id": "3909838294132909971",
           "triggers": {
-            "secret": "very very secret"
+            "secret": "secure"
           }
         },
         "after": {
           "triggers": {
-            "secret": "very very secret 1",
-            "secret2": "foobar"
+            "secret": "very very secure"
           }
         },
         "after_unknown": {
@@ -66,14 +51,10 @@
           "triggers": {}
         },
         "before_sensitive": {
-          "triggers": {
-            "secret": true
-          }
+          "triggers": {}
         },
         "after_sensitive": {
-          "triggers": {
-            "secret": true
-          }
+          "triggers": {}
         },
         "replace_paths": [
           [
@@ -84,29 +65,10 @@
       "action_reason": "replace_because_cannot_update"
     }
   ],
-  "output_changes": {
-    "secret": {
-      "actions": [
-        "update"
-      ],
-      "before": "very very secret",
-      "after": "very very secret 1",
-      "after_unknown": false,
-      "before_sensitive": true,
-      "after_sensitive": true
-    }
-  },
   "prior_state": {
     "format_version": "1.0",
     "terraform_version": "1.7.4",
     "values": {
-      "outputs": {
-        "secret": {
-          "sensitive": true,
-          "value": "very very secret 1",
-          "type": "string"
-        }
-      },
       "root_module": {
         "resources": [
           {
@@ -117,15 +79,13 @@
             "provider_name": "registry.terraform.io/hashicorp/null",
             "schema_version": 0,
             "values": {
-              "id": "3995433242841035086",
+              "id": "3909838294132909971",
               "triggers": {
-                "secret": "very very secret"
+                "secret": "secure"
               }
             },
             "sensitive_values": {
-              "triggers": {
-                "secret": true
-              }
+              "triggers": {}
             }
           }
         ]
@@ -136,20 +96,11 @@
     "provider_config": {
       "null": {
         "name": "null",
-        "full_name": "registry.terraform.io/hashicorp/null"
+        "full_name": "registry.terraform.io/hashicorp/null",
+        "version_constraint": "3.2.2"
       }
     },
     "root_module": {
-      "outputs": {
-        "secret": {
-          "sensitive": true,
-          "expression": {
-            "references": [
-              "var.secret"
-            ]
-          }
-        }
-      },
       "resources": [
         {
           "address": "null_resource.cluster",
@@ -159,22 +110,16 @@
           "provider_config_key": "null",
           "expressions": {
             "triggers": {
-              "references": [
-                "var.secret"
-              ]
+              "constant_value": {
+                "secret": "very very secure"
+              }
             }
           },
           "schema_version": 0
         }
-      ],
-      "variables": {
-        "secret": {
-          "default": "very very secret 1",
-          "sensitive": true
-        }
-      }
+      ]
     }
   },
-  "timestamp": "2024-03-01T11:02:53Z",
+  "timestamp": "2024-03-15T09:46:03Z",
   "errored": false
 }

@@ -1,0 +1,195 @@
+{
+  "format_version": "1.2",
+  "terraform_version": "1.7.4",
+  "planned_values": {
+    "outputs": {
+      "array": {
+        "sensitive": false,
+        "type": [
+          "tuple",
+          [
+            "string",
+            "string",
+            "string"
+          ]
+        ],
+        "value": [
+          "foo",
+          "more",
+          "bar"
+        ]
+      },
+      "number": {
+        "sensitive": false,
+        "type": "number",
+        "value": 12
+      },
+      "object": {
+        "sensitive": false,
+        "type": [
+          "object",
+          {
+            "key1": "string",
+            "key2": "string",
+            "key3": "string"
+          }
+        ],
+        "value": {
+          "key1": "1",
+          "key2": "2 added",
+          "key3": "3 changed"
+        }
+      },
+      "string": {
+        "sensitive": false,
+        "type": "string",
+        "value": "some text 1"
+      }
+    },
+    "root_module": {}
+  },
+  "output_changes": {
+    "array": {
+      "actions": [
+        "update"
+      ],
+      "before": [
+        "foo",
+        "bar"
+      ],
+      "after": [
+        "foo",
+        "more",
+        "bar"
+      ],
+      "after_unknown": false,
+      "before_sensitive": false,
+      "after_sensitive": false
+    },
+    "number": {
+      "actions": [
+        "update"
+      ],
+      "before": 10,
+      "after": 12,
+      "after_unknown": false,
+      "before_sensitive": false,
+      "after_sensitive": false
+    },
+    "object": {
+      "actions": [
+        "update"
+      ],
+      "before": {
+        "key1": "1",
+        "key3": "3",
+        "key4": "4 remove"
+      },
+      "after": {
+        "key1": "1",
+        "key2": "2 added",
+        "key3": "3 changed"
+      },
+      "after_unknown": false,
+      "before_sensitive": false,
+      "after_sensitive": false
+    },
+    "string": {
+      "actions": [
+        "update"
+      ],
+      "before": "some text",
+      "after": "some text 1",
+      "after_unknown": false,
+      "before_sensitive": false,
+      "after_sensitive": false
+    }
+  },
+  "prior_state": {
+    "format_version": "1.0",
+    "terraform_version": "1.7.4",
+    "values": {
+      "outputs": {
+        "array": {
+          "sensitive": false,
+          "value": [
+            "foo",
+            "more",
+            "bar"
+          ],
+          "type": [
+            "tuple",
+            [
+              "string",
+              "string",
+              "string"
+            ]
+          ]
+        },
+        "number": {
+          "sensitive": false,
+          "value": 12,
+          "type": "number"
+        },
+        "object": {
+          "sensitive": false,
+          "value": {
+            "key1": "1",
+            "key2": "2 added",
+            "key3": "3 changed"
+          },
+          "type": [
+            "object",
+            {
+              "key1": "string",
+              "key2": "string",
+              "key3": "string"
+            }
+          ]
+        },
+        "string": {
+          "sensitive": false,
+          "value": "some text 1",
+          "type": "string"
+        }
+      },
+      "root_module": {}
+    }
+  },
+  "configuration": {
+    "root_module": {
+      "outputs": {
+        "array": {
+          "expression": {
+            "constant_value": [
+              "foo",
+              "more",
+              "bar"
+            ]
+          }
+        },
+        "number": {
+          "expression": {
+            "constant_value": 12
+          }
+        },
+        "object": {
+          "expression": {
+            "constant_value": {
+              "key1": "1",
+              "key2": "2 added",
+              "key3": "3 changed"
+            }
+          }
+        },
+        "string": {
+          "expression": {
+            "constant_value": "some text 1"
+          }
+        }
+      }
+    }
+  },
+  "timestamp": "2024-03-15T09:46:32Z",
+  "errored": false
+}

@@ -4,3 +4,32 @@ tasks:
   build:
     cmds:
       - go build ./...
+
+  gen-all:
+    cmds:
+      - for:
+          - outputs
+          - resource_create
+          - resource_delete
+          - resource_replace
+        task: generate-one
+        vars:
+          RESOURCE_DIR: '{{ .ITEM }}'
+
+  gen-*:
+    cmds:
+      - task: generate-one
+        vars:
+          RESOURCE_DIR: '{{index .MATCH 0}}'
+
+  generate-one:
+    internal: true
+    cmds:
+      - rm -rf testdata/tmp
+      - mkdir testdata/tmp
+      - terraform -chdir=testdata/tmp init -reconfigure -from-module=../{{ .RESOURCE_DIR }}/before
+      - terraform -chdir=testdata/tmp apply -auto-approve
+      - cp testdata/{{ .RESOURCE_DIR }}/after/main.tf testdata/tmp
+      - terraform -chdir=testdata/tmp plan -out plan.out
+      - terraform -chdir=testdata/tmp show -json plan.out | jq . > testdata/{{ .RESOURCE_DIR }}/plan.json
+      - rm -rf testdata/tmp
