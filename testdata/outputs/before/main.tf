@@ -20,3 +20,11 @@ output "array" {
     "bar",
   ]
 }
+
+output "nested_object" {
+  value = {
+    key1 = {
+      subkey1 = "1.1"
+    }
+  }
+}

@@ -3,27 +3,6 @@
   "terraform_version": "1.7.4",
   "planned_values": {
     "outputs": {
-      "array": {
-        "sensitive": false,
-        "type": [
-          "tuple",
-          [
-            "string",
-            "string",
-            "string"
-          ]
-        ],
-        "value": [
-          "foo",
-          "more",
-          "bar"
-        ]
-      },
-      "number": {
-        "sensitive": false,
-        "type": "number",
-        "value": 12
-      },
       "object": {
         "sensitive": false,
         "type": [
@@ -39,11 +18,6 @@
           "key2": "2 added",
           "key3": "3 changed"
         }
-      },
-      "string": {
-        "sensitive": false,
-        "type": "string",
-        "value": "some text 1"
       }
     },
     "root_module": {}
@@ -58,10 +32,29 @@
         "bar"
       ],
       "after": [
-        "foo",
         "more",
+        "foo",
         "bar"
       ],
+      "after_unknown": false,
+      "before_sensitive": false,
+      "after_sensitive": false
+    },
+    "nested_object": {
+      "actions": [
+        "update"
+      ],
+      "before": {
+        "key1": {
+          "subkey1": "1.1"
+        }
+      },
+      "after": {
+        "key1": {
+          "subkey1": "1.1",
+          "subkey2": "1.2"
+        }
+      },
       "after_unknown": false,
       "before_sensitive": false,
       "after_sensitive": false
@@ -126,6 +119,27 @@
             ]
           ]
         },
+        "nested_object": {
+          "sensitive": false,
+          "value": {
+            "key1": {
+              "subkey1": "1.1",
+              "subkey2": "1.2"
+            }
+          },
+          "type": [
+            "object",
+            {
+              "key1": [
+                "object",
+                {
+                  "subkey1": "string",
+                  "subkey2": "string"
+                }
+              ]
+            }
+          ]
+        },
         "number": {
           "sensitive": false,
           "value": 12,
@@ -168,6 +182,16 @@
             ]
           }
         },
+        "nested_object": {
+          "expression": {
+            "constant_value": {
+              "key1": {
+                "subkey1": "1.1",
+                "subkey2": "1.2"
+              }
+            }
+          }
+        },
         "number": {
           "expression": {
             "constant_value": 12
@@ -190,6 +214,6 @@
       }
     }
   },
-  "timestamp": "2024-03-15T09:46:32Z",
+  "timestamp": "2024-03-15T10:24:52Z",
   "errored": false
 }
