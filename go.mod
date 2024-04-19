@@ -3,12 +3,12 @@ module github.com/breml/tfreveal
 go 1.21.7
 
 require (
-	github.com/breml/jsondiffprinter v0.0.1
+	github.com/breml/jsondiffprinter v0.0.5
 	github.com/ghetzel/go-stockutil v1.11.4
 	github.com/hashicorp/terraform-json v0.21.0
 	github.com/mitchellh/colorstring v0.0.0-20190213212951-d06e56a500db
 	github.com/urfave/cli/v2 v2.27.1
-	github.com/wI2L/jsondiff v0.5.1
+	github.com/wI2L/jsondiff v0.5.0
 )
 
 require (
@@ -39,5 +39,3 @@ require (
 	gopkg.in/neurosnap/sentences.v1 v1.0.7 // indirect
 	k8s.io/client-go v0.24.1 // indirect
 )
-
-replace github.com/breml/jsondiffprinter => ../jsondiffprinter

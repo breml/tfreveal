@@ -23,6 +23,8 @@ tfreveal
 # Go workspace file
 go.work
 
+dist/
+
 # === Terraform ===
 
 # Local .terraform directories
