@@ -66,12 +66,15 @@ func (a *App) diff(change *tfjson.Change) string {
 		return ""
 	}
 
-	maputil.Walk(change.AfterUnknown, func(value interface{}, path []string, isLeaf bool) error {
+	err := maputil.Walk(change.AfterUnknown, func(value interface{}, path []string, isLeaf bool) error {
 		if val, _ := value.(bool); val {
 			maputil.DeepSet(change.After, path, "<known after>")
 		}
 		return nil
 	})
+	if err != nil {
+		panic(err)
+	}
 
 	patch, err := jsondiff.Compare(change.Before, change.After)
 	if err != nil {

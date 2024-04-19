@@ -1,0 +1,23 @@
+---
+
+# https://github.com/actions/go-dependency-submission
+name: Dependency Submission
+on:
+  push:
+    branches:
+      - master
+
+permissions:
+  contents: write
+
+jobs:
+  main:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-go@v5
+        with:
+          go-version: "stable"
+      - uses: actions/go-dependency-submission@v2
+        with:
+          go-mod-path: go.mod
