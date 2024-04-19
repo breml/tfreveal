@@ -8,7 +8,7 @@ require (
 	github.com/hashicorp/terraform-json v0.21.0
 	github.com/mitchellh/colorstring v0.0.0-20190213212951-d06e56a500db
 	github.com/urfave/cli/v2 v2.27.1
-	github.com/wI2L/jsondiff v0.5.0
+	github.com/wI2L/jsondiff v0.5.1
 )
 
 require (
