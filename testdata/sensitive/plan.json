@@ -1,0 +1,132 @@
+{
+  "format_version": "1.2",
+  "terraform_version": "1.7.4",
+  "planned_values": {
+    "root_module": {
+      "resources": [
+        {
+          "address": "null_resource.sensitive",
+          "mode": "managed",
+          "type": "null_resource",
+          "name": "sensitive",
+          "provider_name": "registry.terraform.io/hashicorp/null",
+          "schema_version": 0,
+          "values": {
+            "triggers": {
+              "secret": "new secret value"
+            }
+          },
+          "sensitive_values": {
+            "triggers": {
+              "secret": true
+            }
+          }
+        }
+      ]
+    }
+  },
+  "resource_changes": [
+    {
+      "address": "null_resource.sensitive",
+      "mode": "managed",
+      "type": "null_resource",
+      "name": "sensitive",
+      "provider_name": "registry.terraform.io/hashicorp/null",
+      "change": {
+        "actions": [
+          "delete",
+          "create"
+        ],
+        "before": {
+          "id": "88005991716266779",
+          "triggers": {
+            "secret": "some secret value"
+          }
+        },
+        "after": {
+          "triggers": {
+            "secret": "new secret value"
+          }
+        },
+        "after_unknown": {
+          "id": true,
+          "triggers": {}
+        },
+        "before_sensitive": {
+          "triggers": {
+            "secret": true
+          }
+        },
+        "after_sensitive": {
+          "triggers": {
+            "secret": true
+          }
+        },
+        "replace_paths": [
+          [
+            "triggers"
+          ]
+        ]
+      },
+      "action_reason": "replace_because_cannot_update"
+    }
+  ],
+  "prior_state": {
+    "format_version": "1.0",
+    "terraform_version": "1.7.4",
+    "values": {
+      "root_module": {
+        "resources": [
+          {
+            "address": "null_resource.sensitive",
+            "mode": "managed",
+            "type": "null_resource",
+            "name": "sensitive",
+            "provider_name": "registry.terraform.io/hashicorp/null",
+            "schema_version": 0,
+            "values": {
+              "id": "88005991716266779",
+              "triggers": {
+                "secret": "some secret value"
+              }
+            },
+            "sensitive_values": {
+              "triggers": {
+                "secret": true
+              }
+            }
+          }
+        ]
+      }
+    }
+  },
+  "configuration": {
+    "provider_config": {
+      "null": {
+        "name": "null",
+        "full_name": "registry.terraform.io/hashicorp/null"
+      }
+    },
+    "root_module": {
+      "resources": [
+        {
+          "address": "null_resource.sensitive",
+          "mode": "managed",
+          "type": "null_resource",
+          "name": "sensitive",
+          "provider_config_key": "null",
+          "expressions": {
+            "triggers": {
+              "references": [
+                "local.secret_value"
+              ]
+            }
+          },
+          "schema_version": 0
+        }
+      ]
+    }
+  },
+  "timestamp": "2024-04-26T05:41:28Z",
+  "errored": false
+}
