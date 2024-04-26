@@ -7,6 +7,7 @@ import (
 	"os"
 
 	tfjson "github.com/hashicorp/terraform-json"
+	"github.com/mitchellh/colorstring"
 	"github.com/urfave/cli/v2"
 )
 
@@ -20,10 +21,20 @@ func main() {
 func main0(osArgs []string) error {
 	app := App{}
 
+	executionPlanLegend := colorstring.Color(`
+Resource actions are indicated with the following symbols:
+   [green][bold]+[reset] create
+   [yellow][bold]~[reset] update in-place
+   [red][bold]-[reset] destroy
+ [red][bold]-[reset]/[green][bold]+[reset] destroy and then create replacement
+ [green][bold]+[reset]/[red][bold]-[reset] create replacement and then destroy
+`)
+	_ = executionPlanLegend
+
 	cliapp := &cli.App{
 		Name:   "tfreveal",
-		Usage:  "Show Terraform plan file with all sensitive values revealed.",
-		Action: app.TerraformReveal,
+		Usage:  "Show an execution plan with all sensitive values revealed.",
+		Action: app.Reveal,
 		Flags: []cli.Flag{
 			&cli.BoolFlag{
 				Name:        "no-color",
@@ -31,6 +42,7 @@ func main0(osArgs []string) error {
 				Destination: &app.noColor,
 			},
 		},
+		CustomAppHelpTemplate: cli.AppHelpTemplate + executionPlanLegend,
 	}
 	return cliapp.Run(osArgs)
 }
@@ -39,7 +51,7 @@ type App struct {
 	noColor bool
 }
 
-func (a *App) TerraformReveal(c *cli.Context) error {
+func (a *App) Reveal(c *cli.Context) error {
 	var source io.Reader = os.Stdin
 
 	if c.Args().Present() {
@@ -62,8 +74,9 @@ func (a *App) TerraformReveal(c *cli.Context) error {
 		return fmt.Errorf(`unmarshal Terraform plan json: %w`, err)
 	}
 
+	fmt.Println("The provided execution plan contains the following changes.")
+	fmt.Println()
 	fmt.Print(a.resourceChanges(plan))
-
 	fmt.Print(a.outputChanges(plan))
 
 	return nil
