@@ -2,6 +2,13 @@
   "format_version": "1.2",
   "terraform_version": "1.7.4",
   "planned_values": {
+    "outputs": {
+      "other_value": {
+        "sensitive": false,
+        "type": "string",
+        "value": "{\"key\":\"value\"}"
+      }
+    },
     "root_module": {
       "resources": [
         {
@@ -71,10 +78,29 @@
       "action_reason": "replace_because_cannot_update"
     }
   ],
+  "output_changes": {
+    "other_value": {
+      "actions": [
+        "create"
+      ],
+      "before": null,
+      "after": "{\"key\":\"value\"}",
+      "after_unknown": false,
+      "before_sensitive": false,
+      "after_sensitive": false
+    }
+  },
   "prior_state": {
     "format_version": "1.0",
     "terraform_version": "1.7.4",
     "values": {
+      "outputs": {
+        "other_value": {
+          "sensitive": false,
+          "value": "{\"key\":\"value\"}",
+          "type": "string"
+        }
+      },
       "root_module": {
         "resources": [
           {
@@ -108,6 +134,15 @@
       }
     },
     "root_module": {
+      "outputs": {
+        "other_value": {
+          "expression": {
+            "references": [
+              "local.other_value"
+            ]
+          }
+        }
+      },
       "resources": [
         {
           "address": "null_resource.sensitive",

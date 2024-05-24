@@ -59,7 +59,7 @@ func (a *App) outputChanges(plan tfjson.Plan) string {
 
 		diffString := a.diff(v)
 
-		buf.WriteString(fmt.Sprintf("%s %s = %s\n", a.marker(v.Actions), k, indent(diffString, 2)))
+		buf.WriteString(fmt.Sprintf("%s %s = %s", a.marker(v.Actions), k, indent(diffString, 2)))
 	}
 
 	if buf.Len() == 0 {
@@ -128,22 +128,22 @@ func (a *App) marker(actions tfjson.Actions) string {
 	}
 	switch {
 	case actions.Create():
-		return colorize.Color("  [green][bold]+[reset]")
+		return colorize.Color("  [green]+[reset]")
 	case actions.CreateBeforeDestroy():
-		return colorize.Color("[green][bold]+[reset]/[red][bold]-[reset]")
+		return colorize.Color("[green]+[reset]/[red]-[reset]")
 	case actions.Delete():
-		return colorize.Color("  [red][bold]-[reset]")
+		return colorize.Color("  [red]-[reset]")
 	case actions.DestroyBeforeCreate():
-		return colorize.Color("[red][bold]-[reset]/[green][bold]+[reset]")
+		return colorize.Color("[red]-[reset]/[green]+[reset]")
 	case actions.NoOp():
 		return colorize.Color("")
 	case actions.Read():
 		return colorize.Color("")
 	case actions.Replace():
-		return colorize.Color("[red][bold]-[reset]/[green][bold]+[reset]")
+		return colorize.Color("[red]-[reset]/[green]+[reset]")
 	case actions.Update():
-		return colorize.Color("  [yellow][bold]~[reset]")
+		return colorize.Color("  [yellow]~[reset]")
 	default:
-		return colorize.Color("[red][bold]!  [reset]")
+		return colorize.Color("[red]!  [reset]")
 	}
 }

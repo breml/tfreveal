@@ -2,8 +2,16 @@ output "string" {
   value = "some text"
 }
 
-output "number" {
+output "number_equal" {
+  value = 5
+}
+
+output "number_change" {
   value = 10
+}
+
+output "number_remove" {
+  value = 20
 }
 
 output "object" {

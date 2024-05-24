@@ -23,11 +23,11 @@ func main0(osArgs []string) error {
 
 	executionPlanLegend := colorstring.Color(`
 Resource actions are indicated with the following symbols:
-   [green][bold]+[reset] create
-   [yellow][bold]~[reset] update in-place
-   [red][bold]-[reset] destroy
- [red][bold]-[reset]/[green][bold]+[reset] destroy and then create replacement
- [green][bold]+[reset]/[red][bold]-[reset] create replacement and then destroy
+   [green]+[reset] create
+   [yellow]~[reset] update in-place
+   [red]-[reset] destroy
+ [red]-[reset]/[green]+[reset] destroy and then create replacement
+ [green]+[reset]/[red]-[reset] create replacement and then destroy
 `)
 	_ = executionPlanLegend
 

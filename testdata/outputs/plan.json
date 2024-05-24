@@ -24,10 +24,20 @@
         "type": "string",
         "value": "{\"key1\":\"1\",\"key2\":\"2 added\",\"key3\":\"3 changed\"}"
       },
-      "number": {
+      "number_add": {
+        "sensitive": false,
+        "type": "number",
+        "value": 30
+      },
+      "number_change": {
         "sensitive": false,
         "type": "number",
         "value": 12
+      },
+      "number_equal": {
+        "sensitive": false,
+        "type": "number",
+        "value": 5
       },
       "object": {
         "sensitive": false,
@@ -81,12 +91,42 @@
       "before_sensitive": false,
       "after_sensitive": false
     },
-    "number": {
+    "number_add": {
+      "actions": [
+        "create"
+      ],
+      "before": null,
+      "after": 30,
+      "after_unknown": false,
+      "before_sensitive": false,
+      "after_sensitive": false
+    },
+    "number_change": {
       "actions": [
         "update"
       ],
       "before": 10,
       "after": 12,
+      "after_unknown": false,
+      "before_sensitive": false,
+      "after_sensitive": false
+    },
+    "number_equal": {
+      "actions": [
+        "no-op"
+      ],
+      "before": 5,
+      "after": 5,
+      "after_unknown": false,
+      "before_sensitive": false,
+      "after_sensitive": false
+    },
+    "number_remove": {
+      "actions": [
+        "delete"
+      ],
+      "before": 20,
+      "after": null,
       "after_unknown": false,
       "before_sensitive": false,
       "after_sensitive": false
@@ -146,9 +186,24 @@
           "value": "{\"key1\":\"1\",\"key2\":\"2 added\",\"key3\":\"3 changed\"}",
           "type": "string"
         },
-        "number": {
+        "number_add": {
+          "sensitive": false,
+          "value": 30,
+          "type": "number"
+        },
+        "number_change": {
           "sensitive": false,
           "value": 12,
+          "type": "number"
+        },
+        "number_equal": {
+          "sensitive": false,
+          "value": 5,
+          "type": "number"
+        },
+        "number_remove": {
+          "sensitive": false,
+          "value": 20,
           "type": "number"
         },
         "object": {
@@ -191,9 +246,19 @@
         "jsonString": {
           "expression": {}
         },
-        "number": {
+        "number_add": {
+          "expression": {
+            "constant_value": 30
+          }
+        },
+        "number_change": {
           "expression": {
             "constant_value": 12
+          }
+        },
+        "number_equal": {
+          "expression": {
+            "constant_value": 5
           }
         },
         "object": {
