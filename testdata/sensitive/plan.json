@@ -1,6 +1,6 @@
 {
   "format_version": "1.2",
-  "terraform_version": "1.7.4",
+  "terraform_version": "1.7.2",
   "planned_values": {
     "outputs": {
       "other_value": {
@@ -45,7 +45,7 @@
           "create"
         ],
         "before": {
-          "id": "88005991716266779",
+          "id": "8384773323318656244",
           "triggers": {
             "secret": "some secret value"
           }
@@ -92,7 +92,7 @@
   },
   "prior_state": {
     "format_version": "1.0",
-    "terraform_version": "1.7.4",
+    "terraform_version": "1.7.2",
     "values": {
       "outputs": {
         "other_value": {
@@ -111,7 +111,7 @@
             "provider_name": "registry.terraform.io/hashicorp/null",
             "schema_version": 0,
             "values": {
-              "id": "88005991716266779",
+              "id": "8384773323318656244",
               "triggers": {
                 "secret": "some secret value"
               }
@@ -162,6 +162,6 @@
       ]
     }
   },
-  "timestamp": "2024-04-26T05:41:28Z",
+  "timestamp": "2024-05-24T12:48:10Z",
   "errored": false
 }

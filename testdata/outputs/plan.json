@@ -1,6 +1,6 @@
 {
   "format_version": "1.2",
-  "terraform_version": "1.7.4",
+  "terraform_version": "1.7.2",
   "planned_values": {
     "outputs": {
       "array": {
@@ -162,7 +162,7 @@
   },
   "prior_state": {
     "format_version": "1.0",
-    "terraform_version": "1.7.4",
+    "terraform_version": "1.7.2",
     "values": {
       "outputs": {
         "array": {
@@ -278,6 +278,6 @@
       }
     }
   },
-  "timestamp": "2024-03-22T10:37:18Z",
+  "timestamp": "2024-05-24T12:48:03Z",
   "errored": false
 }

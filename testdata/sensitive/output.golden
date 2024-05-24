@@ -1,0 +1,19 @@
+The provided execution plan contains the following changes.
+
+Changes to Resources:
+
+  # null_resource.sensitive must be replaced
+-/+ null_resource.sensitive = {
+      ~ id = "8384773323318656244" -> "(known after apply)"
+        triggers = {
+          ~ secret = "some secret value" -> "new secret value"
+        }
+    }
+
+Changes to Outputs:
+
+  + other_value = jsonencode(
+        {
+            "key": "value"
+        }
+    )

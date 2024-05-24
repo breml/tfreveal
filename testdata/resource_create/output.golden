@@ -1,0 +1,11 @@
+The provided execution plan contains the following changes.
+
+Changes to Resources:
+
+  + null_resource.cluster = {
+      + id = "(known after apply)"
+      + triggers = {
+          + secret = "very very secure"
+        }
+    }
+
