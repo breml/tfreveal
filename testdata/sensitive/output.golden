@@ -4,7 +4,7 @@ Changes to Resources:
 
   # null_resource.sensitive must be replaced
 -/+ null_resource.sensitive = {
-      ~ id = "8384773323318656244" -> "(known after apply)"
+      ~ id = "8706140121506085322" -> "(known after apply)"
         triggers = {
           ~ secret = "some secret value" -> "new secret value"
         }
@@ -12,8 +12,25 @@ Changes to Resources:
 
 Changes to Outputs:
 
+  ~ json_with_nested_sensitive = jsonencode(
+        {
+          ~ key = "value" -> "value2"
+        }
+    )
+  ~ null_resource = {
+      ~ id = "8706140121506085322" -> "(known after apply)"
+        triggers = {
+          ~ secret = "some secret value" -> "new secret value"
+        }
+    }
   + other_value = jsonencode(
         {
             "key": "value"
+        }
+    )
+  ~ sensitive = "some secret value" -> "new secret value"
+  ~ sensitive_json = jsonencode(
+        {
+          ~ key = "value" -> "value2"
         }
     )
