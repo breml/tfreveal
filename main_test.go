@@ -40,21 +40,3 @@ func TestMain0(t *testing.T) {
 		})
 	}
 }
-
-func captureStdout(f func() error) string {
-	// return to original state afterwards
-	// note: defer evaluates (and saves) function ARGUMENT values at definition
-	// time, so the original value of os.Stdout is preserved before it is
-	// changed further into this function.
-	defer func(orig *os.File) {
-		os.Stdout = orig
-	}(os.Stdout)
-
-	r, w, _ := os.Pipe()
-	os.Stdout = w
-	f()
-	w.Close()
-	out, _ := io.ReadAll(r)
-
-	return string(out)
-}
