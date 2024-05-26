@@ -4,7 +4,7 @@ Changes to Resources:
 
   # null_resource.sensitive must be replaced
 -/+ null_resource.sensitive = {
-      ~ id = "8706140121506085322" -> "(known after apply)"
+      ~ id = "4190156157480914441" -> "(known after apply)"
         triggers = {
           ~ secret = "some secret value" -> "new secret value"
         }
@@ -18,7 +18,7 @@ Changes to Outputs:
         }
     )
   ~ null_resource = {
-      ~ id = "8706140121506085322" -> "(known after apply)"
+      ~ id = "4190156157480914441" -> "(known after apply)"
         triggers = {
           ~ secret = "some secret value" -> "new secret value"
         }

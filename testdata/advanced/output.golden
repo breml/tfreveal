@@ -72,7 +72,7 @@ Changes to Resources:
 
   # null_resource.cluster must be replaced
 -/+ null_resource.cluster = {
-      ~ id = "8877858137778300212" -> "(known after apply)"
+      ~ id = "7713440656663291188" -> "(known after apply)"
         triggers = {
           ~ secret = "secure" -> "still secure"
         }
@@ -86,19 +86,18 @@ Changes to Resources:
     }
 
   - null_resource.cluster_old = {
-      - id = "2279065025739909102"
+      - id = "342286906083046084"
       - triggers = {
           - secret = "very very secure"
         }
     }
 
   ~ time_offset.example = {
-      ~ day = 31 -> 1
-      ~ month = 5 -> 6
+      ~ day = 2 -> 3
       ~ offset_days = 7 -> 8
-      ~ rfc3339 = "2024-05-31T12:48:02Z" -> "2024-06-01T12:48:02Z"
-      ~ unix = 1717159682 -> 1717246082
-        # (12 unchanged attribute hidden)
+      ~ rfc3339 = "2024-06-02T15:18:04Z" -> "2024-06-03T15:18:04Z"
+      ~ unix = 1717341484 -> 1717427884
+        # (13 unchanged attribute hidden)
     }
 
 Changes to Outputs:

@@ -4,7 +4,7 @@ Changes to Resources:
 
   # null_resource.cluster must be replaced
 -/+ null_resource.cluster = {
-      ~ id = "3551821800729625662" -> "(known after apply)"
+      ~ id = "5350362168280616586" -> "(known after apply)"
         triggers = {
           ~ secret = "secure" -> "very very secure"
         }
