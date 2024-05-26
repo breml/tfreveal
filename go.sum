@@ -62,6 +62,8 @@ github.com/bmizerany/assert v0.0.0-20160611221934-b7ed37b82869 h1:DDGfHa7BWjL4Yn
 github.com/bmizerany/assert v0.0.0-20160611221934-b7ed37b82869/go.mod h1:Ekp36dRnpXw/yCqJaO+ZrUyxD+3VXMFFr56k5XYrpB4=
 github.com/breml/jsondiffprinter v0.0.5 h1:Zd8yn3S1oj76NclUXDTkexbwW5u86t09oV1T5wUJKeE=
 github.com/breml/jsondiffprinter v0.0.5/go.mod h1:729UQJYOSFQicxccpbA7hNFRzaKmVsY7E32/WUGB/Us=
+github.com/breml/jsondiffprinter v0.0.6 h1:AVl1+WxzmNdW7zcq8/Y8HCtPvdXPfoWQacSCUC9qSiI=
+github.com/breml/jsondiffprinter v0.0.6/go.mod h1:ZQNpX6l3HHFVdv8ETUIkBrQKbilrUlFVH0Uc0JP+ohQ=
 github.com/census-instrumentation/opencensus-proto v0.2.1/go.mod h1:f6KPmirojxKA12rnyqOA5BBL4O983OfeGPqjHWSTneU=
 github.com/chzyer/logex v1.1.10/go.mod h1:+Ywpsq7O8HXn0nuIou7OrIPyXbp3wmkHB+jjWRnGsAI=
 github.com/chzyer/readline v0.0.0-20180603132655-2972be24d48e/go.mod h1:nSuG5e5PlCu98SY8svDHJxuZscDgtXS6KTTbou5AhLI=
