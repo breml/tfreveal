@@ -1,0 +1,27 @@
+The provided execution plan contains the following changes.
+
+Changes to Outputs:
+
+  ~ array = [
+        "foo"
+      ~ "bar" -> "more"
+      + "bar"
+    ]
+  ~ jsonString = jsonencode(
+        {
+          + key2 = "2 added"
+          ~ key3 = "3" -> "3 changed"
+          - key4 = "4 remove"
+            # (1 unchanged attribute hidden)
+        }
+    )
+  + number_add = 30
+  ~ number_change = 10 -> 12
+  - number_remove = 20
+  ~ object = {
+      + key2 = "2 added"
+      ~ key3 = "3" -> "3 changed"
+      - key4 = "4 remove"
+        # (1 unchanged attribute hidden)
+    }
+  ~ string = "some text" -> "some text 1"

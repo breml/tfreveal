@@ -15,6 +15,11 @@ import (
 )
 
 func (a *App) resourceChanges(plan tfjson.Plan) string {
+	colorize := colorstring.Colorize{
+		Colors:  colorstring.DefaultColors,
+		Disable: a.noColor,
+	}
+
 	buf := strings.Builder{}
 
 	for _, v := range plan.ResourceChanges {
@@ -24,6 +29,9 @@ func (a *App) resourceChanges(plan tfjson.Plan) string {
 
 		diffString := a.diff(v.Change)
 
+		if len(v.Change.ReplacePaths) > 0 {
+			buf.WriteString(colorize.Color(fmt.Sprintf("  [white]# %s[reset] must be [light_red]replaced[reset]\n", v.Address)))
+		}
 		buf.WriteString(fmt.Sprintf("%s %s = %s\n", a.marker(v.Change.Actions), v.Address, indent(diffString, 2)))
 	}
 
@@ -31,7 +39,7 @@ func (a *App) resourceChanges(plan tfjson.Plan) string {
 		return ""
 	}
 
-	return fmt.Sprintf("Changes to Resources:\n%s", buf.String())
+	return fmt.Sprintf("Changes to Resources:\n\n%s", buf.String())
 }
 
 func (a *App) outputChanges(plan tfjson.Plan) string {
@@ -51,14 +59,14 @@ func (a *App) outputChanges(plan tfjson.Plan) string {
 
 		diffString := a.diff(v)
 
-		buf.WriteString(fmt.Sprintf("%s %s = %s\n", a.marker(v.Actions), k, indent(diffString, 2)))
+		buf.WriteString(fmt.Sprintf("%s %s = %s", a.marker(v.Actions), k, indent(diffString, 2)))
 	}
 
 	if buf.Len() == 0 {
 		return ""
 	}
 
-	return fmt.Sprintf("Changes to Outputs:\n%s", buf.String())
+	return fmt.Sprintf("Changes to Outputs:\n\n%s", buf.String())
 }
 
 func (a *App) diff(change *tfjson.Change) string {
@@ -68,7 +76,7 @@ func (a *App) diff(change *tfjson.Change) string {
 
 	err := maputil.Walk(change.AfterUnknown, func(value interface{}, path []string, isLeaf bool) error {
 		if val, _ := value.(bool); val {
-			maputil.DeepSet(change.After, path, "<known after>")
+			maputil.DeepSet(change.After, path, "(known after apply)")
 		}
 		return nil
 	})
@@ -120,22 +128,22 @@ func (a *App) marker(actions tfjson.Actions) string {
 	}
 	switch {
 	case actions.Create():
-		return colorize.Color("  [green][bold]+[reset]")
+		return colorize.Color("  [green]+[reset]")
 	case actions.CreateBeforeDestroy():
-		return colorize.Color("[green][bold]+[reset]/[red][bold]-[reset]")
+		return colorize.Color("[green]+[reset]/[red]-[reset]")
 	case actions.Delete():
-		return colorize.Color("  [red][bold]-[reset]")
+		return colorize.Color("  [red]-[reset]")
 	case actions.DestroyBeforeCreate():
-		return colorize.Color("[red][bold]-[reset]/[green][bold]+[reset]")
+		return colorize.Color("[red]-[reset]/[green]+[reset]")
 	case actions.NoOp():
 		return colorize.Color("")
 	case actions.Read():
 		return colorize.Color("")
 	case actions.Replace():
-		return colorize.Color("[red][bold]-[reset]/[green][bold]+[reset]")
+		return colorize.Color("[red]-[reset]/[green]+[reset]")
 	case actions.Update():
-		return colorize.Color("  [yellow][bold]~[reset]")
+		return colorize.Color("  [yellow]~[reset]")
 	default:
-		return colorize.Color("[red][bold]!  [reset]")
+		return colorize.Color("[red]!  [reset]")
 	}
 }

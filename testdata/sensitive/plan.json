@@ -1,0 +1,315 @@
+{
+  "format_version": "1.2",
+  "terraform_version": "1.7.2",
+  "planned_values": {
+    "outputs": {
+      "json_with_nested_sensitive": {
+        "sensitive": false,
+        "type": "string",
+        "value": "{\"key\":\"value2\"}"
+      },
+      "null_resource": {
+        "sensitive": true
+      },
+      "other_value": {
+        "sensitive": false,
+        "type": "string",
+        "value": "{\"key\":\"value\"}"
+      },
+      "sensitive": {
+        "sensitive": false,
+        "type": "string",
+        "value": "new secret value"
+      },
+      "sensitive_json": {
+        "sensitive": false,
+        "type": "string",
+        "value": "{\"key\":\"value2\"}"
+      }
+    },
+    "root_module": {
+      "resources": [
+        {
+          "address": "null_resource.sensitive",
+          "mode": "managed",
+          "type": "null_resource",
+          "name": "sensitive",
+          "provider_name": "registry.terraform.io/hashicorp/null",
+          "schema_version": 0,
+          "values": {
+            "triggers": {
+              "secret": "new secret value"
+            }
+          },
+          "sensitive_values": {
+            "triggers": {
+              "secret": true
+            }
+          }
+        }
+      ]
+    }
+  },
+  "resource_changes": [
+    {
+      "address": "null_resource.sensitive",
+      "mode": "managed",
+      "type": "null_resource",
+      "name": "sensitive",
+      "provider_name": "registry.terraform.io/hashicorp/null",
+      "change": {
+        "actions": [
+          "delete",
+          "create"
+        ],
+        "before": {
+          "id": "4190156157480914441",
+          "triggers": {
+            "secret": "some secret value"
+          }
+        },
+        "after": {
+          "triggers": {
+            "secret": "new secret value"
+          }
+        },
+        "after_unknown": {
+          "id": true,
+          "triggers": {}
+        },
+        "before_sensitive": {
+          "triggers": {
+            "secret": true
+          }
+        },
+        "after_sensitive": {
+          "triggers": {
+            "secret": true
+          }
+        },
+        "replace_paths": [
+          [
+            "triggers"
+          ]
+        ]
+      },
+      "action_reason": "replace_because_cannot_update"
+    }
+  ],
+  "output_changes": {
+    "json_with_nested_sensitive": {
+      "actions": [
+        "update"
+      ],
+      "before": "{\"key\":\"value\"}",
+      "after": "{\"key\":\"value2\"}",
+      "after_unknown": false,
+      "before_sensitive": false,
+      "after_sensitive": false
+    },
+    "null_resource": {
+      "actions": [
+        "update"
+      ],
+      "before": {
+        "id": "4190156157480914441",
+        "triggers": {
+          "secret": "some secret value"
+        }
+      },
+      "after": {
+        "triggers": {
+          "secret": "new secret value"
+        }
+      },
+      "after_unknown": {
+        "id": true,
+        "triggers": {}
+      },
+      "before_sensitive": true,
+      "after_sensitive": true
+    },
+    "other_value": {
+      "actions": [
+        "create"
+      ],
+      "before": null,
+      "after": "{\"key\":\"value\"}",
+      "after_unknown": false,
+      "before_sensitive": false,
+      "after_sensitive": false
+    },
+    "sensitive": {
+      "actions": [
+        "update"
+      ],
+      "before": "some secret value",
+      "after": "new secret value",
+      "after_unknown": false,
+      "before_sensitive": false,
+      "after_sensitive": false
+    },
+    "sensitive_json": {
+      "actions": [
+        "update"
+      ],
+      "before": "{\"key\":\"value\"}",
+      "after": "{\"key\":\"value2\"}",
+      "after_unknown": false,
+      "before_sensitive": false,
+      "after_sensitive": false
+    }
+  },
+  "prior_state": {
+    "format_version": "1.0",
+    "terraform_version": "1.7.2",
+    "values": {
+      "outputs": {
+        "json_with_nested_sensitive": {
+          "sensitive": false,
+          "value": "{\"key\":\"value2\"}",
+          "type": "string"
+        },
+        "null_resource": {
+          "sensitive": true,
+          "value": {
+            "id": "4190156157480914441",
+            "triggers": {
+              "secret": "some secret value"
+            }
+          },
+          "type": [
+            "object",
+            {
+              "id": "string",
+              "triggers": [
+                "map",
+                "string"
+              ]
+            }
+          ]
+        },
+        "other_value": {
+          "sensitive": false,
+          "value": "{\"key\":\"value\"}",
+          "type": "string"
+        },
+        "sensitive": {
+          "sensitive": false,
+          "value": "new secret value",
+          "type": "string"
+        },
+        "sensitive_json": {
+          "sensitive": false,
+          "value": "{\"key\":\"value2\"}",
+          "type": "string"
+        }
+      },
+      "root_module": {
+        "resources": [
+          {
+            "address": "null_resource.sensitive",
+            "mode": "managed",
+            "type": "null_resource",
+            "name": "sensitive",
+            "provider_name": "registry.terraform.io/hashicorp/null",
+            "schema_version": 0,
+            "values": {
+              "id": "4190156157480914441",
+              "triggers": {
+                "secret": "some secret value"
+              }
+            },
+            "sensitive_values": {
+              "triggers": {
+                "secret": true
+              }
+            }
+          }
+        ]
+      }
+    }
+  },
+  "configuration": {
+    "provider_config": {
+      "null": {
+        "name": "null",
+        "full_name": "registry.terraform.io/hashicorp/null"
+      }
+    },
+    "root_module": {
+      "outputs": {
+        "json_with_nested_sensitive": {
+          "expression": {
+            "references": [
+              "local.json_with_nested_sensitive"
+            ]
+          }
+        },
+        "null_resource": {
+          "sensitive": true,
+          "expression": {
+            "references": [
+              "null_resource.sensitive"
+            ]
+          }
+        },
+        "other_value": {
+          "expression": {
+            "references": [
+              "local.other_value"
+            ]
+          }
+        },
+        "sensitive": {
+          "expression": {
+            "references": [
+              "null_resource.sensitive.triggers.secret",
+              "null_resource.sensitive.triggers",
+              "null_resource.sensitive"
+            ]
+          }
+        },
+        "sensitive_json": {
+          "expression": {
+            "references": [
+              "local.sensitive_json"
+            ]
+          }
+        }
+      },
+      "resources": [
+        {
+          "address": "null_resource.sensitive",
+          "mode": "managed",
+          "type": "null_resource",
+          "name": "sensitive",
+          "provider_config_key": "null",
+          "expressions": {
+            "triggers": {
+              "references": [
+                "local.secret_value"
+              ]
+            }
+          },
+          "schema_version": 0
+        }
+      ]
+    }
+  },
+  "relevant_attributes": [
+    {
+      "resource": "null_resource.sensitive",
+      "attribute": [
+        "triggers",
+        "secret"
+      ]
+    },
+    {
+      "resource": "null_resource.sensitive",
+      "attribute": []
+    }
+  ],
+  "timestamp": "2024-05-26T15:18:12Z",
+  "errored": false
+}

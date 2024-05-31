@@ -1,0 +1,12 @@
+The provided execution plan contains the following changes.
+
+Changes to Resources:
+
+  ~ time_offset.example = {
+      ~ day = 2 -> 3
+      ~ offset_days = 7 -> 8
+      ~ rfc3339 = "2024-06-02T15:18:10Z" -> "2024-06-03T15:18:10Z"
+      ~ unix = 1717341490 -> 1717427890
+        # (13 unchanged attribute hidden)
+    }
+

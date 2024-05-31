@@ -8,10 +8,13 @@ tasks:
   gen-all:
     cmds:
       - for:
+          - advanced
           - outputs
           - resource_create
           - resource_delete
           - resource_replace
+          - resource_update
+          - sensitive
         task: generate-one
         vars:
           RESOURCE_DIR: '{{ .ITEM }}'
@@ -33,3 +36,4 @@ tasks:
       - terraform -chdir=testdata/tmp plan -out plan.out
       - terraform -chdir=testdata/tmp show -json plan.out | jq . > testdata/{{ .RESOURCE_DIR }}/plan.json
       - rm -rf testdata/tmp
+      - go run . --no-color testdata/{{ .RESOURCE_DIR }}/plan.json > testdata/{{ .RESOURCE_DIR }}/output.golden
