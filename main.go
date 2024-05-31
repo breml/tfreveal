@@ -11,6 +11,12 @@ import (
 	"github.com/urfave/cli/v2"
 )
 
+var (
+	version = "dev"
+	commit  = "none"
+	date    = "unknown"
+)
+
 func main() {
 	if err := main0(os.Args); err != nil {
 		fmt.Fprintf(os.Stderr, "Error: %v\n", err)
@@ -42,6 +48,9 @@ Resource actions are indicated with the following symbols:
 			},
 		},
 		CustomAppHelpTemplate: cli.AppHelpTemplate + executionPlanLegend,
+
+		Copyright: "© 2024, Lucas Bremgartner",
+		Version:   fmt.Sprintf("%s (%s, %s)", version, commit, date),
 	}
 	return cliapp.Run(osArgs)
 }
