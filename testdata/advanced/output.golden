@@ -58,14 +58,14 @@ Changes to Resources:
               - string_removed = "removed"
                 # (4 unchanged attribute hidden)
             }
-        )
+        ) # forces replacement
       ~ content_base64sha256 = "nIMhVlzPvgCIzeahBGJ/jEJLuCBuwIqx78vltuKjcyw=" -> "(known after apply)"
       ~ content_base64sha512 = "WDetH1vI/Yy0tu49ZCyW/WySxstlQc3+T7vX0Ei0UaLvLKsd884Djd3raxFJS66NMgFZc1bpSxPKKDXmgz9drA==" -> "(known after apply)"
       ~ content_md5 = "6f61fcba1ffd2b366fe358450f93b952" -> "(known after apply)"
       ~ content_sha1 = "4dfb08a62fbd3d8737cd6a11c2360df3953dda51" -> "(known after apply)"
       ~ content_sha256 = "9c8321565ccfbe0088cde6a104627f8c424bb8206ec08ab1efcbe5b6e2a3732c" -> "(known after apply)"
       ~ content_sha512 = "5837ad1f5bc8fd8cb4b6ee3d642c96fd6c92c6cb6541cdfe4fbbd7d048b451a2ef2cab1df3ce038dddeb6b11494bae8d3201597356e94b13ca2835e6833f5dac" -> "(known after apply)"
-      ~ file_permission = "0777" -> "0660"
+      ~ file_permission = "0777" -> "0660" # forces replacement
       ~ id = "4dfb08a62fbd3d8737cd6a11c2360df3953dda51" -> "(known after apply)"
         # (5 unchanged attribute hidden)
     }
@@ -73,7 +73,7 @@ Changes to Resources:
   # null_resource.cluster must be replaced
 -/+ null_resource.cluster = {
       ~ id = "7713440656663291188" -> "(known after apply)"
-        triggers = {
+        triggers = { # forces replacement
           ~ secret = "secure" -> "still secure"
         }
     }

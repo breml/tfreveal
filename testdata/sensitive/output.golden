@@ -5,7 +5,7 @@ Changes to Resources:
   # null_resource.sensitive must be replaced
 -/+ null_resource.sensitive = {
       ~ id = "4190156157480914441" -> "(known after apply)"
-        triggers = {
+        triggers = { # forces replacement
           ~ secret = "some secret value" -> "new secret value"
         }
     }

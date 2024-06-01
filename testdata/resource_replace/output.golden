@@ -5,7 +5,7 @@ Changes to Resources:
   # null_resource.cluster must be replaced
 -/+ null_resource.cluster = {
       ~ id = "5350362168280616586" -> "(known after apply)"
-        triggers = {
+        triggers = { # forces replacement
           ~ secret = "secure" -> "very very secure"
         }
     }
