@@ -29,7 +29,6 @@ Resource actions are indicated with the following symbols:
  [red]-[reset]/[green]+[reset] destroy and then create replacement
  [green]+[reset]/[red]-[reset] create replacement and then destroy
 `)
-	_ = executionPlanLegend
 
 	cliapp := &cli.App{
 		Name:   "tfreveal",
