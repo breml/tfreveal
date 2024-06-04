@@ -1,9 +1,8 @@
 module github.com/breml/tfreveal
 
 go 1.21.7
-
 require (
-	github.com/breml/jsondiffprinter v0.0.6
+	github.com/breml/jsondiffprinter v0.0.7
 	github.com/ghetzel/go-stockutil v1.11.4
 	github.com/hashicorp/terraform-json v0.22.1
 	github.com/mitchellh/colorstring v0.0.0-20190213212951-d06e56a500db
