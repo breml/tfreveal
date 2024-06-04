@@ -1,6 +1,7 @@
 module github.com/breml/tfreveal
 
-go 1.21.7
+go 1.22.3
+
 require (
 	github.com/breml/jsondiffprinter v0.0.7
 	github.com/ghetzel/go-stockutil v1.11.4
