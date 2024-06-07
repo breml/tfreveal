@@ -89,12 +89,42 @@ func (a *App) diff(change *tfjson.Change) string {
 		panic(err)
 	}
 
+	replacePaths := make([]string, 0, len(change.ReplacePaths))
+	for _, replacePath := range change.ReplacePaths {
+		rp := replacePath.([]any)
+		var path string
+		for _, pathSegment := range rp {
+			path += "/" + fmt.Sprint(pathSegment)
+		}
+		replacePaths = append(replacePaths, path)
+	}
+
 	buf := &strings.Builder{}
 	formatter := jsondiffprinter.NewTerraformFormatter(buf,
 		jsondiffprinter.WithIndentation("    "),
 		jsondiffprinter.WithHideUnchanged(true),
 		jsondiffprinter.WithJSONinJSONCompare(compare),
 		jsondiffprinter.WithColor(!a.noColor),
+		jsondiffprinter.WithPatchSeriesPostProcess(func(diff jsondiffprinter.Patch) jsondiffprinter.Patch {
+			colorize := colorstring.Colorize{
+				Colors:  colorstring.DefaultColors,
+				Disable: a.noColor,
+			}
+
+		outerLoop:
+			for _, path := range replacePaths {
+				for i := range diff {
+					if diff[i].Path.String() == path {
+						if diff[i].Metadata == nil {
+							diff[i].Metadata = make(map[string]string, 0)
+						}
+						diff[i].Metadata["note"] = colorize.Color(" [light_red]# forces replacement[reset]")
+						continue outerLoop
+					}
+				}
+			}
+			return diff
+		}),
 	)
 	err = formatter.Format(change.Before, patch)
 	if err != nil {
