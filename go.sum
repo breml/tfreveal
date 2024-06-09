@@ -60,8 +60,8 @@ github.com/armon/go-socks5 v0.0.0-20160902184237-e75332964ef5/go.mod h1:wHh0iHkY
 github.com/asaskevich/govalidator v0.0.0-20190424111038-f61b66f89f4a/go.mod h1:lB+ZfQJz7igIIfQNfa7Ml4HSf2uFQQRzpGGRXenZAgY=
 github.com/bmizerany/assert v0.0.0-20160611221934-b7ed37b82869 h1:DDGfHa7BWjL4YnC6+E63dPcxHo2sUxDIu8g3QgEJdRY=
 github.com/bmizerany/assert v0.0.0-20160611221934-b7ed37b82869/go.mod h1:Ekp36dRnpXw/yCqJaO+ZrUyxD+3VXMFFr56k5XYrpB4=
-github.com/breml/jsondiffprinter v0.0.8 h1:+FE3r92haHtqDSfjq1l8JRAKmEARVEeajD4Ud0YqVGQ=
-github.com/breml/jsondiffprinter v0.0.8/go.mod h1:XuyU5sGP+XDNFHnhuyOT67mRBUUHtJ8OmjztxNuXgL8=
+github.com/breml/jsondiffprinter v0.0.10 h1:pJBsUc8EUSragXq8ivkeeW/SSOkGpywg6usATc2qSiw=
+github.com/breml/jsondiffprinter v0.0.10/go.mod h1:XuyU5sGP+XDNFHnhuyOT67mRBUUHtJ8OmjztxNuXgL8=
 github.com/census-instrumentation/opencensus-proto v0.2.1/go.mod h1:f6KPmirojxKA12rnyqOA5BBL4O983OfeGPqjHWSTneU=
 github.com/chzyer/logex v1.1.10/go.mod h1:+Ywpsq7O8HXn0nuIou7OrIPyXbp3wmkHB+jjWRnGsAI=
 github.com/chzyer/readline v0.0.0-20180603132655-2972be24d48e/go.mod h1:nSuG5e5PlCu98SY8svDHJxuZscDgtXS6KTTbou5AhLI=

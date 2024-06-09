@@ -25,7 +25,7 @@ Changes to Outputs:
     }
   + other_value = jsonencode(
         {
-            "key": "value"
+          + key = "value"
         }
     )
   ~ sensitive = "some secret value" -> "new secret value"
