@@ -100,7 +100,9 @@ func (a *App) diff(change *tfjson.Change) string {
 	}
 
 	buf := &strings.Builder{}
-	formatter := jsondiffprinter.NewTerraformFormatter(buf,
+	options := []jsondiffprinter.Option{
+		jsondiffprinter.WithTerraformDefaults(),
+		jsondiffprinter.WithWriter(buf),
 		jsondiffprinter.WithIndentation("    "),
 		jsondiffprinter.WithHideUnchanged(true),
 		jsondiffprinter.WithJSONinJSONCompare(compare),
@@ -125,8 +127,8 @@ func (a *App) diff(change *tfjson.Change) string {
 			}
 			return diff
 		}),
-	)
-	err = formatter.Format(change.Before, patch)
+	}
+	err = jsondiffprinter.Format(change.Before, patch, options...)
 	if err != nil {
 		panic(err)
 	}
