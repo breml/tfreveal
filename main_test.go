@@ -1,9 +1,11 @@
 package main
 
 import (
+	"bytes"
 	"io"
 	"os"
 	"path/filepath"
+	"sync"
 	"testing"
 
 	"github.com/stretchr/testify/require"
@@ -23,6 +25,15 @@ func TestMain0(t *testing.T) {
 			r, w, err := os.Pipe()
 			require.NoError(t, err)
 
+			var copyErr error
+			buf := bytes.NewBuffer(nil)
+			wg := sync.WaitGroup{}
+			wg.Add(1)
+			go func() {
+				defer wg.Done()
+				_, copyErr = io.Copy(buf, r)
+			}()
+
 			os.Stdout = w
 
 			err = main0([]string{"tfreveal", "--no-color", filepath.Join(filename, "plan.json")})
@@ -30,13 +41,13 @@ func TestMain0(t *testing.T) {
 			err = w.Close()
 			require.NoError(t, err)
 
-			out, err := io.ReadAll(r)
-			require.NoError(t, err)
-
 			want, err := os.ReadFile(filepath.Join(filename, "output.golden"))
 			require.NoError(t, err)
 
-			require.Equal(t, string(want), string(out))
+			wg.Wait()
+			require.NoError(t, copyErr)
+
+			require.Equal(t, string(want), buf.String())
 		})
 	}
 }
