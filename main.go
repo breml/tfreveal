@@ -46,6 +46,11 @@ Resource actions are indicated with the following symbols:
 				Usage:       "Disable colorized output",
 				Destination: &app.noColor,
 			},
+			&cli.BoolFlag{
+				Name:        "show-unchanged",
+				Usage:       "Show unchanged attributes",
+				Destination: &app.showUnchanged,
+			},
 		},
 		CustomAppHelpTemplate: cli.AppHelpTemplate + executionPlanLegend,
 
@@ -56,7 +61,8 @@ Resource actions are indicated with the following symbols:
 }
 
 type App struct {
-	noColor bool
+	noColor       bool
+	showUnchanged bool
 }
 
 func (a *App) Reveal(c *cli.Context) error {
