@@ -104,7 +104,7 @@ func (a *App) diff(change *tfjson.Change) string {
 		jsondiffprinter.WithTerraformDefaults(),
 		jsondiffprinter.WithWriter(buf),
 		jsondiffprinter.WithIndentation("    "),
-		jsondiffprinter.WithHideUnchanged(true),
+		jsondiffprinter.WithHideUnchanged(!a.showUnchanged),
 		jsondiffprinter.WithJSONinJSONCompare(compare),
 		jsondiffprinter.WithColor(!a.noColor),
 		jsondiffprinter.WithPatchSeriesPostProcess(func(diff jsondiffprinter.Patch) jsondiffprinter.Patch {
