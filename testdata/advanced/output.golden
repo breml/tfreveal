@@ -70,9 +70,43 @@ Changes to Resources:
         # (5 unchanged attribute hidden)
     }
 
+  # local_file.json2string must be replaced
+-/+ local_file.json2string = {
+      ~ content = jsonencode(
+            {
+              - key = "some random json"
+            }
+        ) -> "some random string" # forces replacement
+      ~ content_base64sha256 = "HYsNaOjaBgmFTRuYj4T4J4Ve7InaRVmfw2wgDbwr8Cs=" -> "(known after apply)"
+      ~ content_base64sha512 = "COm1PXnJevPHVeZququDXk5+U5hDeA4dLmTnUpdeMhoF/3+isI46Hgkg5Dln9HCVN7Ythqjq4mrIP4t67bq3Ow==" -> "(known after apply)"
+      ~ content_md5 = "31dd41a76bb193c928caf767ac8e8340" -> "(known after apply)"
+      ~ content_sha1 = "72e1eb91ff698efdaa1a82b5977634a04cf2985d" -> "(known after apply)"
+      ~ content_sha256 = "1d8b0d68e8da0609854d1b988f84f827855eec89da45599fc36c200dbc2bf02b" -> "(known after apply)"
+      ~ content_sha512 = "08e9b53d79c97af3c755e66abaab835e4e7e539843780e1d2e64e752975e321a05ff7fa2b08e3a1e0920e43967f4709537b62d86a8eae26ac83f8b7aedbab73b" -> "(known after apply)"
+      ~ id = "72e1eb91ff698efdaa1a82b5977634a04cf2985d" -> "(known after apply)"
+        # (6 unchanged attribute hidden)
+    }
+
+  # local_file.string2json must be replaced
+-/+ local_file.string2json = {
+      ~ content = "some random string" -> jsonencode(
+            {
+              + key = "some random json"
+            }
+        ) # forces replacement
+      ~ content_base64sha256 = "Q0LgjQHySsRRvDu/9oZAhWO1wm04bQwYh5JE9eeXTX0=" -> "(known after apply)"
+      ~ content_base64sha512 = "eaxV3784RhIgGecPVkfZ+wZlola4sUqDaG/V8Hr+Y5LKG7a3UJ5UkF9VRA4UYOGmtnlGI0hcm7nVJeq2u1AGFw==" -> "(known after apply)"
+      ~ content_md5 = "76712b27e483bc0ba2ce8d2109210c22" -> "(known after apply)"
+      ~ content_sha1 = "8d7219cf3e6259b90b70d5b5e2d39b27f946e4b8" -> "(known after apply)"
+      ~ content_sha256 = "4342e08d01f24ac451bc3bbff686408563b5c26d386d0c18879244f5e7974d7d" -> "(known after apply)"
+      ~ content_sha512 = "79ac55dfbf3846122019e70f5647d9fb0665a256b8b14a83686fd5f07afe6392ca1bb6b7509e54905f55440e1460e1a6b6794623485c9bb9d525eab6bb500617" -> "(known after apply)"
+      ~ id = "8d7219cf3e6259b90b70d5b5e2d39b27f946e4b8" -> "(known after apply)"
+        # (6 unchanged attribute hidden)
+    }
+
   # null_resource.cluster must be replaced
 -/+ null_resource.cluster = {
-      ~ id = "7713440656663291188" -> "(known after apply)"
+      ~ id = "2582010537129087805" -> "(known after apply)"
         triggers = { # forces replacement
           ~ secret = "secure" -> "still secure"
         }
@@ -86,17 +120,17 @@ Changes to Resources:
     }
 
   - null_resource.cluster_old = {
-      - id = "342286906083046084"
+      - id = "6045924575212971352"
       - triggers = {
           - secret = "very very secure"
         }
     }
 
   ~ time_offset.example = {
-      ~ day = 2 -> 3
+      ~ day = 16 -> 17
       ~ offset_days = 7 -> 8
-      ~ rfc3339 = "2024-06-02T15:18:04Z" -> "2024-06-03T15:18:04Z"
-      ~ unix = 1717341484 -> 1717427884
+      ~ rfc3339 = "2024-08-16T06:48:48Z" -> "2024-08-17T06:48:48Z"
+      ~ unix = 1723790928 -> 1723877328
         # (13 unchanged attribute hidden)
     }
 

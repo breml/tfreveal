@@ -91,6 +91,18 @@ resource "local_file" "foo" {
   file_permission = "0660"
 }
 
+resource "local_file" "string2json" {
+  content = jsonencode({
+    "key": "some random json"
+  })
+  filename = "${path.module}/string2json"
+}
+
+resource "local_file" "json2string" {
+  content  = "some random string"
+  filename = "${path.module}/json2string"
+}
+
 output "string" {
   value = "some text 1"
 }

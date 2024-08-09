@@ -90,6 +90,18 @@ resource "local_file" "foo" {
   filename = "${path.module}/foo.bar"
 }
 
+resource "local_file" "string2json" {
+  content  = "some random string"
+  filename = "${path.module}/string2json"
+}
+
+resource "local_file" "json2string" {
+  content = jsonencode({
+    "key": "some random json"
+  })
+  filename = "${path.module}/json2string"
+}
+
 output "string" {
   value = "some text"
 }
