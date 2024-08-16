@@ -8,6 +8,8 @@ plan files by displaying all differences in resources and outputs, including
 sensitive values. Unlike Terraform, which hides sensitive data, tfreveal reveals
 these values to ensure complete transparency in your infrastructure changes.
 
+[![asciicast](https://asciinema.org/a/672302.svg)](https://asciinema.org/a/672302)
+
 ## Motivation
 
 Terraform does mask sensitive values in the output (e.g. from `terraform plan`)
