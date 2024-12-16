@@ -4,7 +4,7 @@ go 1.22.3
 
 require (
 	github.com/breml/jsondiffprinter v0.0.12
-	github.com/ghetzel/go-stockutil v1.12.1
+	github.com/ghetzel/go-stockutil v1.12.2
 	github.com/hashicorp/terraform-json v0.23.0
 	github.com/mitchellh/colorstring v0.0.0-20190213212951-d06e56a500db
 	github.com/stretchr/testify v1.10.0

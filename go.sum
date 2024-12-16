@@ -18,8 +18,8 @@ github.com/davecgh/go-spew v1.1.2-0.20180830191138-d8f796af33cc h1:U9qPSI2PIWSS1
 github.com/davecgh/go-spew v1.1.2-0.20180830191138-d8f796af33cc/go.mod h1:J7Y8YcW2NihsgmVo/mv3lAwl/skON4iLHjSsI+c5H38=
 github.com/fatih/structs v1.1.0 h1:Q7juDM0QtcnhCpeyLGQKyg4TOIghuNXrkL32pHAUMxo=
 github.com/fatih/structs v1.1.0/go.mod h1:9NiDSp5zOcgEDl+j00MP/WkGVPOlPRLejGD8Ga6PJ7M=
-github.com/ghetzel/go-stockutil v1.12.1 h1:Dea+FXhBAsPYKwjesTicYig8wMIbOkdKoMebXkX8Zwo=
-github.com/ghetzel/go-stockutil v1.12.1/go.mod h1:juzwPAnPxtu/IQCFlTx8tc8bwSYC6RS7T59piGbcMwE=
+github.com/ghetzel/go-stockutil v1.12.2 h1:kDe3d8ZZvyDE/2h3qM296imThkwFd/idA0GVlyviwXE=
+github.com/ghetzel/go-stockutil v1.12.2/go.mod h1:juzwPAnPxtu/IQCFlTx8tc8bwSYC6RS7T59piGbcMwE=
 github.com/ghetzel/testify v1.4.1 h1:wpJirdM+znAnxWruGDBdIys5aU+wGJHNUTkgEo4PYwk=
 github.com/ghetzel/testify v1.4.1/go.mod h1:FwvFn1OiGEUgzhS3ySCjTBG7/sez0WRvOAxz5uQU8so=
 github.com/ghetzel/uuid v0.0.0-20171129191014-dec09d789f3d h1:YVJe7KwVYazt90hCc/q2dYJVS3062AY6QdT6iHd+Kh8=
