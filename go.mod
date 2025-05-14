@@ -9,7 +9,7 @@ require (
 	github.com/mitchellh/colorstring v0.0.0-20190213212951-d06e56a500db
 	github.com/stretchr/testify v1.10.0
 	github.com/urfave/cli/v2 v2.27.6
-	github.com/wI2L/jsondiff v0.6.1
+	github.com/wI2L/jsondiff v0.7.0
 )
 
 require (
