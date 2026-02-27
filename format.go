@@ -32,7 +32,7 @@ func (a *App) resourceChanges(plan tfjson.Plan) string {
 		if len(v.Change.ReplacePaths) > 0 {
 			buf.WriteString(colorize.Color(fmt.Sprintf("  [white]# %s[reset] must be [light_red]replaced[reset]\n", v.Address)))
 		}
-		buf.WriteString(fmt.Sprintf("%s %s = %s\n", a.marker(v.Change.Actions), v.Address, indent(diffString, 2)))
+		fmt.Fprintf(&buf, "%s %s = %s\n", a.marker(v.Change.Actions), v.Address, indent(diffString, 2))
 	}
 
 	if buf.Len() == 0 {
@@ -59,7 +59,7 @@ func (a *App) outputChanges(plan tfjson.Plan) string {
 
 		diffString := a.diff(v)
 
-		buf.WriteString(fmt.Sprintf("%s %s = %s", a.marker(v.Actions), k, indent(diffString, 2)))
+		fmt.Fprintf(&buf, "%s %s = %s", a.marker(v.Actions), k, indent(diffString, 2))
 	}
 
 	if buf.Len() == 0 {

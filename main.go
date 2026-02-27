@@ -73,7 +73,9 @@ func (a *App) Reveal(c *cli.Context) error {
 		if err != nil {
 			return fmt.Errorf(`open source: %w`, err)
 		}
-		defer file.Close()
+		defer func() {
+			_ = file.Close()
+		}()
 		source = file
 	}
 
