@@ -1,10 +1,10 @@
 module github.com/breml/tfreveal
 
-go 1.24.2
+go 1.25.0
 
 require (
 	github.com/breml/jsondiffprinter v0.0.12
-	github.com/ghetzel/go-stockutil v1.13.2
+	github.com/ghetzel/go-stockutil v1.14.0
 	github.com/hashicorp/terraform-json v0.27.2
 	github.com/mitchellh/colorstring v0.0.0-20190213212951-d06e56a500db
 	github.com/stretchr/testify v1.11.1
@@ -33,9 +33,9 @@ require (
 	github.com/tidwall/sjson v1.2.5 // indirect
 	github.com/xrash/smetrics v0.0.0-20240521201337-686a1a2994c1 // indirect
 	github.com/zclconf/go-cty v1.16.4 // indirect
-	golang.org/x/text v0.23.0 // indirect
+	golang.org/x/text v0.31.0 // indirect
 	gopkg.in/check.v1 v1.0.0-20190902080502-41f04d3bba15 // indirect
 	gopkg.in/neurosnap/sentences.v1 v1.0.7 // indirect
 	gopkg.in/yaml.v3 v3.0.1 // indirect
-	k8s.io/client-go v0.33.1 // indirect
+	k8s.io/client-go v0.35.2 // indirect
 )
