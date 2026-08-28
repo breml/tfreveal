@@ -7,7 +7,7 @@ require (
 	github.com/ghetzel/go-stockutil v1.14.5
 	github.com/hashicorp/terraform-json v0.28.0
 	github.com/mitchellh/colorstring v0.0.0-20190213212951-d06e56a500db
-	github.com/stretchr/testify v1.12.0
+	github.com/stretchr/testify v1.12.1
 	github.com/urfave/cli/v2 v2.27.7
 	github.com/wI2L/jsondiff v0.7.1
 )
@@ -33,9 +33,8 @@ require (
 	github.com/tidwall/sjson v1.2.5 // indirect
 	github.com/xrash/smetrics v0.0.0-20240521201337-686a1a2994c1 // indirect
 	github.com/zclconf/go-cty v1.16.4 // indirect
+	go.yaml.in/yaml/v3 v3.0.5 // indirect
 	golang.org/x/text v0.31.0 // indirect
-	gopkg.in/check.v1 v1.0.0-20190902080502-41f04d3bba15 // indirect
 	gopkg.in/neurosnap/sentences.v1 v1.0.7 // indirect
-	gopkg.in/yaml.v3 v3.0.1 // indirect
 	k8s.io/client-go v0.35.2 // indirect
 )
